@@ -29,7 +29,7 @@ const LineChart = ({ type, x_axis, y_axis, category }) => {
 
   return (
     <div style={{ width: "500px" }}>
-      <canvas ref={chartRef} style={{ width: "10px", height: "100px" }} />
+      <canvas ref={chartRef} style={{ width: "20", height: "10" }} />
     </div>
   );
 };
