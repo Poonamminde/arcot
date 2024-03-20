@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import data from "./api/ai-data.json";
+import { useDispatch } from "react-redux";
+import CategoryDistribution from "./components/categoryDistribution";
+import ResponseTime from "./components/responseTime";
+import UserSatisfaction from "./components/userSatisfaction";
+import UsageStatics from "./components/usageStatistic";
 
 function App() {
+  const dispatch = useDispatch();
+  const addData = () => {
+    console.log("add data");
+    dispatch({ type: "load", data });
+    //console.log(data);
+  };
+
+  addData();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CategoryDistribution />
+      <ResponseTime />
+      <UserSatisfaction />
+      <UsageStatics />
     </div>
   );
 }
