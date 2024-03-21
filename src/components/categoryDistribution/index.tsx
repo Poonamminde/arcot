@@ -3,6 +3,9 @@ import { useSelector } from "react-redux";
 import Chart from "../chart/chart";
 import { useDispatch } from "react-redux";
 import "../style/index.css";
+/**
+ * category distribution chart
+ */
 
 function Index() {
   const dispatch = useDispatch();

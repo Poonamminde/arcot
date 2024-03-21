@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Chart from "../chart/chart";
 import "../style/index.css";
-
+/**
+ * user satisfaction chart
+ * @returns
+ */
 const Index = () => {
   const dispatch = useDispatch();
   const state: any = useSelector((state) => state);

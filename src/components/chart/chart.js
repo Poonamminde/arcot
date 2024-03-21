@@ -1,6 +1,10 @@
 import React, { useRef, useEffect } from "react";
 import Chart from "chart.js/auto";
-
+/**
+ * display chart according to type provided by argument
+ * @param {*} param0
+ * @returns
+ */
 const LineChart = ({ type, x_axis, y_axis, category }) => {
   const chartRef = useRef(null);
   const chartInstance = useRef(null);
