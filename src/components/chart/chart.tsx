@@ -1,13 +1,26 @@
 import React, { useRef, useEffect } from "react";
 import Chart from "chart.js/auto";
+import "../style/index.css";
+
+interface chartInterface {
+  type: any;
+  x_axis: any;
+  y_axis: any;
+  category: string;
+}
 /**
  * display chart according to type provided by argument
  * @param {*} param0
  * @returns
  */
-const LineChart = ({ type, x_axis, y_axis, category }) => {
-  const chartRef = useRef(null);
-  const chartInstance = useRef(null);
+const LineChart: React.FC<chartInterface> = ({
+  type,
+  x_axis,
+  y_axis,
+  category,
+}) => {
+  const chartRef: any = useRef(null);
+  const chartInstance: any = useRef(null);
   //console.log(data);
   useEffect(() => {
     if (chartInstance.current) {
@@ -15,7 +28,7 @@ const LineChart = ({ type, x_axis, y_axis, category }) => {
     }
     const myChartRef = chartRef.current.getContext("2d");
     chartInstance.current = new Chart(myChartRef, {
-      type: type,
+      type,
       data: {
         labels: x_axis, //["January","February", "March","April","May", "June","July", ],
         datasets: [
@@ -40,7 +53,7 @@ const LineChart = ({ type, x_axis, y_axis, category }) => {
   });
 
   return (
-    <div style={{ width: "500px" }}>
+    <div className="chart-container">
       <canvas ref={chartRef} style={{ width: "20", height: "10" }} />
     </div>
   );
